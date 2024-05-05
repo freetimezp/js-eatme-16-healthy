@@ -608,12 +608,13 @@ body.dark-mode {
 .dark-mode .food p,
 .dark-mode .social a,
 .dark-mode .footer p,
-.dark-mode .anker,
-.dark-mode .sp {
+.dark-mode .anker{
     color: #fff;
 }
 
-
+.dark-mode .sp {
+    color: rgb(247, 144, 144);
+}
 
 
 
