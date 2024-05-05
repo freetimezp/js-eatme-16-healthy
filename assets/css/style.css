@@ -1,5 +1,620 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    list-style-type: none;
 }
+
+body {
+    overflow: hidden;
+    font-family: 'Nunito';
+    font-weight: bold;
+}
+
+header {
+    width: 100%;
+    height: 100vh;
+}
+
+.side-navbar {
+    margin-left: 44px;
+    font-size: xx-large;
+    margin-top: 44px;
+    animation: slide-in 1s ease-out;
+    animation-delay: .5s;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    row-gap: 10rem;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.design {
+    display: flex;
+    flex-direction: column;
+    row-gap: 80px;
+    max-width: 30px;
+}
+
+.design a {
+    transform: rotate(90deg);
+    font-size: x-large;
+    color: #000;
+    transition: all .5s ease;
+    animation: rotate-in 2s ease-out;
+    animation-delay: 1s;
+    display: block;
+    margin-bottom: 40px;
+}
+
+@keyframes rotate-in {
+    0% {
+        transform: rotate(0deg) scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: rotate(0deg) scale(0);
+        opacity: 0;
+    }
+    90% {
+        transform: rotate(90deg) scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(90deg) scale(1);
+        opacity: 1;
+    }
+}
+
+
+.top-navbar {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    animation: fade-in 1s ease-out;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.top-navbar::after {
+    content: '';
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background-color: rgb(13, 206, 13);
+    border-radius: 50%;
+    right: 1px;
+    top: 7px;
+    animation: pulse 2s inifinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.top-navbar .top a {
+    color: #000;
+    font-size: 1.5rem;
+    margin-right: 2rem;
+    animation: slide-in-right 1s ease-out;
+    transition: all .5s ease;
+}
+
+@keyframes slide-in-right {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.top-navbar .icons img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative;
+}
+
+
+.design a:hover,
+.top a:hover {
+    text-shadow: 0 0 10px red;
+}
+
+.top-navbar .top a:first-child {
+    color: #ff0000;
+}
+
+.icons-top {
+    display: flex;
+    align-items: center;
+}
+
+.icons a {
+    font-size: 2rem;
+    color: #000;
+    margin: 10px;
+    animation: bounce 1s ease-out infinite;
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translate(0);
+    }
+}
+
+.theme-switch label {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.theme-switch label i {
+    margin: 0 5px;
+    font-size: 15px;
+    transition: all .3s ease-in;
+}
+
+.theme-switch label i:hover {
+    color: red;
+}
+
+.food {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    animation: slide-in-left 1s ease-out;
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.order {
+    position: absolute;
+    top: 15rem;
+    left: 75rem;
+    width: 281%;
+    font-size: 1.2rem;
+    animation: fade-in 1s ease-out;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.order h1 {
+    font-size: 5rem;
+    position: relative;
+    width: 197%;
+    right: 88px;
+    text-shadow: 0 0 32px red;
+    animation: text-flicker 2s linear infinite;
+}
+
+@keyframes text-flicker {
+    0%,
+    100% {
+        text-shadow: 0 0 32px red;
+    }
+    50% {
+        text-shadow: 0 0 128px red;
+    }
+}
+
+.order p {
+    position: relative;
+    right: 5rem;
+    width: 11%;
+    font-size: 1.1rem;
+    animation: slide-in-right 1s ease-out;
+}
+
+.order a {
+    color: #fff;
+    font-size: 1.5rem;
+    position: relative;
+    left: 0;
+    top: 22px;
+    border: 2px solid #000;
+    background-color: #000;
+    padding: 6px 12px;
+    animation: button-pulse 1s infinite;
+}
+
+@keyframes button-pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.anker {
+    color: red;
+    position: relative;
+    left: -77px;
+    top: 30px;
+    font-size: 2.2rem;
+    margin-right: 27px;
+    animation: anker-rotate 2s linear infinite;
+}
+
+@keyframes anker-rotate {
+    0% {
+        transform: rotate(0deg);
+    }   
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.sp {
+    position: absolute;
+    left: -80px;
+    top: 16rem;
+    font-size: 12px;
+    animation: sp-bounce 1s infinite;
+    font-style: italic;
+    text-transform: lowercase;
+}
+
+@keyframes sp-bounce {
+    0%,  
+    100% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}
+
+
+.foodbar {
+    position: absolute;
+    top: 0;
+    left: 20rem;
+    background-color: rgb(47, 45, 45);
+    width: 25%;
+    height: 60vh;
+    animation: slide-in-left 1s ease-out;
+    transition: all .5s ease-in;
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.foodbar img {
+    width: 163%;
+    height: 75vh;
+    position: relative;
+    top: 1rem;
+    left: -13rem;
+    filter: drop-shadow(0px 0px 24px #000);
+    animation: zoom-in 1s ease-out;
+}
+
+@keyframes zoom-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.foodbar span {
+    color: #fff;
+    position: relative;
+    left: 11rem;
+    font-size: 3rem;
+    animation: fade-in 1s ease-out;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    position: absolute;
+    width: 58%;
+    right: 6rem;
+    bottom: 3rem;
+    animation: slide-in-bottom 1s ease-out;
+}
+
+@keyframes slide-in-bottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.images {
+    width: 156px;
+    height: 23vh;
+    text-align: center;
+    background-color: rgb(47, 45, 45);
+    border-radius: 10px;
+    animation: fade-in 1s ease-out;
+    box-shadow: 12px 14px 58px #000;
+}
+
+.images img {
+    position: absolute;
+    width: 13%;
+    top: -3rem;
+    border-radius: 5px;
+    animation: bounce 2s infinite;    
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.images span {
+    position: relative;
+    top: 3rem;
+    right: 35px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    animation: fade-in 1s ease-out;
+    animation-delay: 1s;
+}
+
+.images p {
+    position: relative;
+    top: 5rem;
+    color: #fff;
+    margin: 0;
+    font-size: 14px;
+    animation: fade-in 1s ease-out;
+    animation-delay: 1s;
+}
+
+.rating {
+    color: gold;
+    margin-top: 106px;
+    animation: scale-in 1s ease-out;
+    animation-delay: 1.4s;
+}
+
+
+@keyframes scale-in {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.images a {
+    display: inline-block;
+    background-color: #3a3a3a;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color .5s;
+    animation: pulse 2s infinite;
+    margin-top: 1rem;
+}
+
+.images a:hover {
+    background-color: #555;
+}
+
+
+.social {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    animation: slide-in-bottom 1s ease-out;
+}
+
+@keyframes slide-in-bottom {
+    0%{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.social a {
+    color: #333;
+    font-size: 2rem;
+    margin: 0 10px;
+    transition: color .3s; 
+    animation: scale-in 1s ease-out;
+}
+
+@keyframes scale-in {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.social a:hover {
+    color: #666;
+    animation: pulse 1s infinite;
+}
+
+.social .fa-instagram:hover {
+    color: #e1306c;
+}
+.social .fa-youtube:hover {
+    color: #ff0000;
+}
+.social .fa-google:hover {
+    color: #0077b5;
+}
+.social .fa-facebook:hover {
+    color: #db4437;
+}
+.social .fa-twitter:hover {
+    color: #3b5998;
+}
+
+.item-img {
+    transition: outline .3s ease-in-out;
+    outline: 4px solid transparent;
+}
+
+.item-img.animated {
+    outline: 4px solid #ff9800;
+    outline-offset: 8px;
+    animation: animated-pulse 1s infinite;
+}
+
+@keyframes animated-pulse {
+    0% {
+        outline-color: #ff9800;
+    }
+    50% {
+        outline-color: #ff5722;
+    }
+    100% {
+        outline-color: #ff9800;
+    }
+}
+
+.theme-switch {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.theme-switch-checkbox {
+    display: none;
+}
+.theme-switch-label {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+.theme-switch-label i {
+    margin-right: 5px;
+}
+
+body.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-mode .top-navbar{
+    color: #fff;
+}
+
+.dark-mode .top-navbar a,
+.dark-mode .side-navbar a,
+.dark-mode .food h1,
+.dark-mode .food p,
+.dark-mode .social a,
+.dark-mode .footer p,
+.dark-mode .anker,
+.dark-mode .sp {
+    color: #fff;
+}
+
+
+
+
+
+
