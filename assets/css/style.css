@@ -308,7 +308,7 @@ header {
     left: -80px;
     top: 16rem;
     font-size: 12px;
-    animation: sp-bounce 1s infinite;
+    animation: sp-bounce 5s infinite;
     font-style: italic;
     text-transform: lowercase;
 }
@@ -320,7 +320,7 @@ header {
         opacity: 0;
     }
     50% {
-        transform: translateY(-10px);
+        transform: translateY(-30px);
         opacity: 1;
     }
 }
